@@ -1,0 +1,20 @@
+<h1>Manager List</h1>
+
+<h3><%= link_to 'New Manager', new_manager_path %></h3>
+
+<table>
+	<tr>
+		<th>First name</th>
+		<th>Last name</th>
+		<th colspan="2"></th>
+	</tr>
+
+	<% @managers.each do |manager| %>
+		<tr>
+			<td><%= manager.first_name %></td>
+      		<td><%= manager.last_name %></td>
+      		<td><%= link_to 'Edit', edit_manager_path(manager) %></td>
+		</tr>
+	<% end %>
+	
+</table>

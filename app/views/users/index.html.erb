@@ -1,0 +1,22 @@
+<h1>Users List</h1>
+
+<h3><%= link_to 'New User', new_user_path %></h3>
+
+<table>
+	<tr>
+		<th>First name</th>
+		<th>Last name</th>
+		<th>Telephone No.</th>
+		<th colspan="2"></th>
+	</tr>
+
+	<% @users.each do |user| %>
+		<tr>
+			<td><%= user.first_name %></td>
+      		<td><%= user.last_name %></td>
+      		<td><%= user.tel_no %></td>
+      		<td><%= link_to 'Edit', edit_user_path(user) %></td>
+		</tr>
+	<% end %>
+	
+</table>

@@ -1,0 +1,40 @@
+<%= form_for @room do |f| %>
+	<p>
+		<%= f.label :room_number %><br>
+		<%= f.text_field :room_number %>
+		<!-- <%= f.label :employee_id %> -->
+		<label for="room_employee_id">Employee:</label>
+		<%= f.select :employee_id, options_from_collection_for_select(@employees, 'id', 'first_name') %>
+	</p>
+	<p>
+		
+	</p>
+	<fieldset>
+		<legend>Customer details</legend>
+		<%= if @user == nil
+				first_name = ""
+				last_name = ""
+				tel_no = ""
+			else
+				first_name = @user.first_name
+				last_name = @user.last_name
+				tel_no = @user.tel_no
+			end
+		%>
+		<p>
+			<label for="first_name">First name:</label>
+			<input type="text" name="first_name" id="first_name" value="<%= first_name %>">
+			<label for="last_name">Last name:</label>
+			<input type="text" name="last_name" id="last_name" value="<%= last_name %>">
+		</p>
+		<p>
+			<label for="tel_no">Telephone no.</label>
+			<input type="text" name="tel_no" id="tel_no" value="<%= tel_no %>">
+		</p>
+
+	</fieldset>
+	
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
