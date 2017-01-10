@@ -1,6 +1,9 @@
+<div class="navbar">	
+	<p><%= link_to 'Home', root_path %></p>
+</div>
 <h1>Room List</h1>
 <h3><%= link_to 'New Reservation', new_room_path %></h3>
-<input type="text" id="searchInput" onkeyup="tableFilter()" placeholder="Search for names..">
+<input type="text" id="searchInput" onkeyup="tableFilter()" placeholder="Search customer names..">
 <table id="reservationTable">
 	<tr>
 		<th>Room no.</th>

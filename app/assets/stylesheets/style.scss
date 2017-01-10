@@ -4,8 +4,32 @@ body {
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
+.navbar {
+	height: 50px;
+	border: 1px solid #3F9086;
+	margin-top: -10px;
+	margin-left: -10px;
+	margin-right: -10px;
+	background: #46A095;
+
+}
+
+.navbar p {
+	color: #fff;
+	font-size: 18px;
+	margin-left: 3%;
+	line-height: 50px;
+	display: inline;
+}
+
+.navbar a {
+	text-decoration: none;
+	color: #fff;
+}
+
 h1 {
 	text-align: center;
+	margin-top: 50px;
 }
 
 h3 {

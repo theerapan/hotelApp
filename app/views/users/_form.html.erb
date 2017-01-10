@@ -1,17 +1,19 @@
 <%= form_for @user do |f| %>
-	<p>
-		<%= f.label :first_name %><br>
-		<%= f.text_field :first_name %>
-	</p>
-	<p>
-		<%= f.label :last_name %><br>
-		<%= f.text_field :last_name %>
-	</p>
-	<p>
-		<%= f.label :tel_no %><br>
-		<%= f.text_field :tel_no %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
+	<fieldset>
+		<legend>Customer details</legend>
+		<p>
+			<%= f.label :first_name %>
+			<%= f.text_field :first_name %>
+			<%= f.label :last_name %>
+			<%= f.text_field :last_name %>
+		</p>
+		<p>
+			<%= f.label :tel_no %>
+			<%= f.text_field :tel_no %>
+		</p>
+		<p>
+			<%= f.submit %>
+		</p>
+	</fieldset>
+	
 <% end %>

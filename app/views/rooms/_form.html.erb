@@ -9,7 +9,7 @@
 	<p>
 		
 	</p>
-	<fieldset>
+	<fieldset id="fieldset_room">
 		<legend>Customer details</legend>
 		<%= if @user == nil
 				first_name = ""
@@ -32,9 +32,11 @@
 			<input type="text" name="tel_no" id="tel_no" value="<%= tel_no %>">
 		</p>
 
+		<p>
+			<%= f.submit %>
+		</p>
+
 	</fieldset>
 	
-	<p>
-		<%= f.submit %>
-	</p>
+	
 <% end %>
