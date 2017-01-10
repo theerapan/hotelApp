@@ -1,12 +1,13 @@
 <h1>Room List</h1>
 <h3><%= link_to 'New Reservation', new_room_path %></h3>
-<table>
+<input type="text" id="searchInput" onkeyup="tableFilter()" placeholder="Search for names..">
+<table id="reservationTable">
 	<tr>
 		<th>Room no.</th>
 		<th>Employee Name</th>
 		<th>Customer name</th>
 		<th>Telephone no.</th>
-		<th colspan="3"></th>
+		<th colspan="4"></th>
 	</tr>
 	<% @rooms.each do |room| %>
 		<tr>
@@ -15,7 +16,41 @@
       		<td><%= @users.find(room.user_id).first_name + " " +@users.find(room.user_id).last_name %></td>
       		<td><%= @users.find(room.user_id).tel_no %></td>
       		<td><%= link_to 'Edit', edit_room_path(room) %></td>
-      		<td><%= link_to 'Destroy', room_path(room), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      		<td>
+      			<%= link_to 'Cancel', room_path(room), method: :delete, data: { confirm: 'Are you sure?' } %>
+      		</td>
+      		<td>
+      			<input class="tgl tgl-flip" id="cb<%= room.id %>" type="checkbox"/>
+    			<label class="tgl-btn" data-tg-off="Check-out" data-tg-on="Check-in" for="cb<%= room.id %>"></label>
+      		</td>
 		</tr>
 	<% end %>
 </table>
+
+<script type="text/javascript">
+	function tableFilter() {
+		var input, filter, table, tr, td, i;
+		input = document.getElementById("searchInput");
+		filter = input.value.toUpperCase();
+		table = document.getElementById("reservationTable");
+		tr = table.getElementsByTagName("tr");
+
+		for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[2];
+			if (td) {
+			  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+			    tr[i].style.display = "";
+			  } else {
+			    tr[i].style.display = "none";
+			  }
+			} 
+		}
+	}
+</script>
+
+
+
+
+
+
+

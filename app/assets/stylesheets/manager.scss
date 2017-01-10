@@ -3,3 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import url('style');
+
+.form-general {
+	margin: auto;
+	margin-top: 40px;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 20px;
+}
+
+.form-general p {
+	margin-left: 15%;
+}
+
+.form-general input {
+	font-size: 18px;
+}
+
+.form-general input[type="submit"] {
+	margin-top: 60px;
+}
+
+fieldset {
+	height: 200px;
+}
+
+.form-general input[type="text"] {
+	margin-right: 20px;
+}

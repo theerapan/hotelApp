@@ -1,13 +1,20 @@
 <%= form_for @employee do |f| %>
-	<p>
-		<%= f.label :first_name %><br>
+	<fieldset>
+		<legend>Employee details</legend>
+		<p>
+		<%= f.label :first_name %>
 		<%= f.text_field :first_name %>
-	</p>
-	<p>
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name %>
+		</p>
+		<p>
+			<%= f.submit %>
+		</p>
+	</fieldset>
+	
+	<!-- <p>
 		<%= f.label :last_name %><br>
 		<%= f.text_field :last_name %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
+	</p> -->
+	
 <% end %>
