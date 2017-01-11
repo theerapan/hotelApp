@@ -1,2 +1,8 @@
-<%= link_to 'Manager', managers_path %><br>
-<%= link_to 'Employee', rooms_path %>
+<div class="navbar">	
+	<p><%= link_to 'Home', root_path %></p>
+</div>
+<h1>Hotel</h1>
+<div class="menu-box">
+	<%= link_to 'Manager', employees_path, { class: 'btn-manager' } %>
+	<%= link_to 'Employee', rooms_path, { class: 'btn-employee' } %>
+</div>

@@ -3,3 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import url('style');
+
+.menu-box {
+	margin: auto;
+	width: 330px;
+	margin-top: 70px;
+}
+
+.menu-box a {
+	margin-left: 15px;
+	padding: 18px 40px 18px 40px;
+	border-radius: 3px;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.btn-manager {
+	background: #41984F;
+	border: 1px solid #358a3d;
+}
+
+.btn-manager:hover {
+	background: #34793F;
+}
+
+.btn-employee {
+	background: #3473A0;
+	border: 1px solid #2E6790;
+}
+
+.btn-employee:hover {
+	background: #295C80;
+}
