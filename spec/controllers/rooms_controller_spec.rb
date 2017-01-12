@@ -60,14 +60,3 @@ describe RoomsController, as: :controllers do
 	end
 
 end
-
-
-
-
-
-
-
-
-
-
-
