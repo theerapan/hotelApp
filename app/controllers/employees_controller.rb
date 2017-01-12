@@ -1,4 +1,7 @@
 class EmployeesController < ApplicationController
+
+	before_action :authenticate_customer!
+
 	def index
 		@employees = Employee.all
 	end

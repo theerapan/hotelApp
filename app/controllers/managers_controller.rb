@@ -1,4 +1,7 @@
 class ManagersController < ApplicationController
+
+	before_action :authenticate_customer!
+	
 	def index
 		@managers = Manager.all
 	end
