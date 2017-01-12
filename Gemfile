@@ -53,6 +53,7 @@ group :test do
   # integration
   gem 'capybara'
   gem 'poltergeist'
+  gem 'rails-controller-testing'
 end
 
 group :development do
