@@ -13,6 +13,7 @@ class EmployeesController < ApplicationController
 	def create
 		@employee = Employee.new(employee_params)
 		if @employee.save
+			UserMailer.welcome_email(@employee).deliver_now
 			redirect_to employees_path
 		else
 			render 'new'
