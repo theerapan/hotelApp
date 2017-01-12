@@ -11,14 +11,11 @@ describe RoomsController, as: :controllers do
 
 	describe '#create' do
 		before :each do
-			expect {
-				customer
-			}.to change{ Customer.count }.by 1
+			expect { customer }.to change{ Customer.count }.by 1
 
 			sign_in customer
 		end
 		it 'can create' do
-			
 			expect {
 				post :create, {
 					first_name: 'Theerapan', 
@@ -35,8 +32,7 @@ describe RoomsController, as: :controllers do
 
 		it 'cannot create without first_name of user' do
 			expect {
-				post :create, {
-					
+				post :create, {					
 					last_name: 'Khanthigul', 
 					tel_no: '0909090909',
 					room: {
@@ -47,6 +43,27 @@ describe RoomsController, as: :controllers do
 				}
 			}.to change{ User.count }.by 0
 		end
-
 	end
+
+	describe '#index' do 
+		let(:room_in_db) do
+			Room.all
+		end
+
+		it 'equal in db' do
+			expect(@rooms.length).to equal(room_in_db)
+		end
+	end
+
 end
+
+
+
+
+
+
+
+
+
+
+

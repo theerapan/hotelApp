@@ -14,5 +14,3 @@ describe 'authentication', js:true do
 		expect(page).to have_content("Signed in successfully.")
 	end
 end
-
-# save_screenshot('/Users/Jedi/Desktop/hotel.jpg')
