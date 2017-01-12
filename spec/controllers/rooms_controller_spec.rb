@@ -45,6 +45,7 @@ describe RoomsController, as: :controllers do
 		end
 	end
 
+	# rspec-1
 	describe '#index' do 
 		before :each do
 			expect { customer }.to change{ Customer.count }.by 1
@@ -57,33 +58,6 @@ describe RoomsController, as: :controllers do
 			expect(assigns(:rooms).length).to eq(Room.all.length)
 		end
 	end
-
-	# describe '#update' do
-	# 	before :each do
-
-	# 		let(:user) do
-	# 			User.create!(
-	# 			first_name: "first_name",
-	# 			last_name: "last_name",
-	# 			tel_no: "010101010"
-	# 		)
-	# 		end
-			
-	# 		expect { user }.to change{ User.count }.by 1
-
-	# 		sign_in customer
-	# 	end
-
-	# 	it 'can update last_name of user from edit room' do
-	# 		expect {
-	# 			patch :update, {
-	# 				first_name: 'first_name',
-	# 				last_name: 'updated_last_name',
-	# 				tel_no: '010101010'
-	# 			}
-	# 		}.to
-	# 	end
-	# end
 
 end
 

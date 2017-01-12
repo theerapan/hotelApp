@@ -55,13 +55,13 @@ class RoomsController < ApplicationController
 
 		@room = Room.find(params[:id])
 
-		if User.update(@room.user_id, :first_name => first_name, :last_name => last_name)
-			redirect_to rooms_path
-		else
-			render 'edit'
-		end
+		# if 
+		# 	redirect_to rooms_path
+		# else
+		# 	render 'edit'
+		# end
 		
-		if @room.update(room_params)
+		if @room.update(room_params) && User.update(@room.user_id, :first_name => first_name, :last_name => last_name)
 			redirect_to rooms_path
 		else
 			render 'edit'
