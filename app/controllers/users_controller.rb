@@ -22,9 +22,9 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update(user_params)
-			#redirect_to rooms_path
+			redirect_to rooms_path
 		else
-			#redirect_to rooms_path
+			render 'edit'
 		end
 	end
 
