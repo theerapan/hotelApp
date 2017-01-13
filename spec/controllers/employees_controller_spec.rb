@@ -1,17 +1,21 @@
 describe EmployeesController, as: :controllers do
-  describe "Update" do
-    let(:employee) {
-      Employee.create(first_name: "taweesak" ,
-                      last_name: "intaratat")}
+  let(:employee) {
+    Employee.create(first_name: "taweesak" ,
+                    last_name: "intaratat")}
 
+  describe "Update" do
     it "can update" do
-      patch :update , id: employee , employee: {
+      employee_before_first_name  = employee.first_name
+      employee_before_last_name  = employee.last_name
+      patch :update , id: employee.id , employee: {
                                     first_name: "updated name" ,
                                     last_name:  "updateed name"}
       employee.reload
 
-      expect(employee.first_name) == ("updated name")
-      expect(employee.last_name) == ("updateed name")
+      # expect(employee.first_name) == ("updated name")
+      # expect(employee.last_name) == ("updateed name")
+      expect(employee.last_name).not_to equal(employee_before_last_name)
+      expect(employee.first_name).not_to equal(employee_before_first_name)
     end
   end
 
