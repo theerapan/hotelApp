@@ -24,7 +24,8 @@ describe EmployeesController, as: :controllers do
       expect {
         @employees = assigns(:employees).length
         @employee  = Employee.all.length
-        @employee == @employees
+        # @employee == @employees
+        expect(@employee).to be_truthy @employees
       }
     end
   end
