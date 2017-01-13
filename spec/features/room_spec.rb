@@ -1,9 +1,15 @@
 describe 'room', js:true do
 
-	let(:employee) {Employee.create(first_name: "first_name", last_name: "last_name")}
+	let(:employee) do 
+		Employee.create(first_name: "first_name", 
+			last_name: "last_name"
+		)
+	end
 
 	let(:customer) do
-		Customer.create(email: "test#{rand(100000)}@test.com", password: "password")
+		Customer.create(email: "test#{rand(100000)}@test.com", 
+			password: "password"
+		)
 	end
 
 	let(:user_first_name) { "fisrt#{rand(1000000)}" }
