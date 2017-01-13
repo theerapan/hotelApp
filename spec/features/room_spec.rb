@@ -1,5 +1,4 @@
 describe 'room', js:true do
-
 	let(:employee) do 
 		Employee.create(first_name: "first_name", 
 			last_name: "last_name"
@@ -17,6 +16,12 @@ describe 'room', js:true do
 
 	before :each do
 		expect { customer }.to change{ Customer.count }.by 1
+		expect { employee }.to change{ Employee.count }.by 1
+		expect { 
+			User.create(first_name: "user#{rand(1000)}", 
+				last_name: "last_name")
+		 }.to change{ User.count }.by 1
+
 		visit 'rooms'
 		fill_in 'Email', with: customer.email
 		fill_in 'Password', with: customer.password
@@ -27,14 +32,10 @@ describe 'room', js:true do
 	it 'can create room' do
 		click_link 'New Reservation'
 		fill_in 'Room number', with: rand(1000)
-		find('select#room_employee_id').find(
-			"option[value='#{Employee.first.id}']"
-			).select_option
 		fill_in 'First name', with: user_first_name
 		fill_in 'Last name', with: user_last_name
 		fill_in 'Telephone no.', with: rand(1000000000)
 		expect { click_button 'Create Room' }.to change(Room, :count).by(1)
 		expect(page).to have_content(user_first_name && user_last_name)
 	end
-
 end
