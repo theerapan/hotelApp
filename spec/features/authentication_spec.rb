@@ -8,7 +8,6 @@ describe 'authentication', js:true do
 		click_link 'Manager'
 		fill_in 'Email', with: customer.email
 		fill_in 'Password', with: customer.password
-		save_screenshot('/Users/Jedi/Desktop/hotel.jpg')
 		click_button 'Sign in'
 
 		expect(page).to have_content("Signed in successfully.")
