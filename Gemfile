@@ -63,4 +63,5 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'rails-controller-testing'
 end
