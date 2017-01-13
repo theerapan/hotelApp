@@ -35,8 +35,8 @@ describe "check all employee" do
   it 'can show employee 2' do
     click_link 'New Employee'
     fill_in 'employee[first_name]' , with: employee_first_2
-    fill_in 'employee[last_name]' , with: employee_last2
-    click button 'Create Employee'
+    fill_in 'employee[last_name]' , with: employee_last_2
+    click_button 'Create Employee'
 
     expect(page).to have_content(employee_first_2)
     expect(page).to have_content(employee_last_2)
